@@ -5,7 +5,6 @@ services:
           container_name: frontend_c
           ports:
            - '3000:3000'
-          command: npm run dev
     backend:
           build: ./backend
           container_name: backend_c
@@ -13,4 +12,3 @@ services:
            - '4000:4000'
           stdin_open: true
           tty: true
-          command: npm run dev

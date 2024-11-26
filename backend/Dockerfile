@@ -1,14 +1,14 @@
 FROM node:18
 
-WORKDIR src/index.js
+WORKDIR /src
 
 COPY package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY /src /src
 
 EXPOSE 3000
 
-CMD ["node", "index.js"]
+CMD ["node", "src/index.js"]
 

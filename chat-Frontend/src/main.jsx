@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.jsx";
+import socketIO from "socket.io-client";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -10,12 +10,12 @@ import {
 } from "react-router-dom";
 import ChatPage from "./pages/ChatPage.jsx";
 import Home from "./pages/Home.jsx";
-
+const socket = socketIO.connect("http://localhost:4000");
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route path="/" element={<Home />} />
-      <Route path="/chat" element={<ChatPage />} />
+      <Route path="/chat" element={<ChatPage socket={socket} />} />
     </Route>
   )
 );

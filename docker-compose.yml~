@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+    backend:
+    build:
+      context: ./backend
+    command: npm start
+    volumes:
+            - ./backend:/app
+    ports:
+            - "5000:5000"
+
+    frontend:
+      build:
+        context: ./frontend
+      command: npm start
+      ports:
+      - "5173:5173"

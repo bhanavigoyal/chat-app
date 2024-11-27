@@ -1,10 +1,10 @@
 import React from "react";
 import Card from "./components/Card";
 
-const Home = () => {
+const Home = ({ socket }) => {
   return (
     <div className="bg-slate-300 h-screen flex justify-center items-center">
-      <Card />
+      <Card socket={socket} />
     </div>
   );
 };

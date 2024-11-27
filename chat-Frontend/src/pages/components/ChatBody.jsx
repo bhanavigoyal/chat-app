@@ -5,7 +5,7 @@ const ChatBody = () => {
   const navigate = useNavigate();
 
   const handleLeaveChat = () => {
-    localStorage.removeItem("userName");
+    localStorage.removeItem("username");
     navigate("/");
     window.location.reload();
   };
@@ -34,11 +34,6 @@ const ChatBody = () => {
           <div className="message__recipient">
             <p>Hey, I'm good, you?</p>
           </div>
-        </div>
-
-        {/*This is triggered when a user is typing*/}
-        <div className="message__status">
-          <p>Someone is typing...</p>
         </div>
       </div>
     </>

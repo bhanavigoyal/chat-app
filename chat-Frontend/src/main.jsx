@@ -14,7 +14,7 @@ const socket = socketIO.connect("http://localhost:4000");
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home socket={socket} />} />
       <Route path="/chat" element={<ChatPage socket={socket} />} />
     </Route>
   )

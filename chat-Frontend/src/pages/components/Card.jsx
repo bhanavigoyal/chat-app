@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-const Card = () => {
-  const [username, setUsername] = useState();
+const Card = ({ socket }) => {
+  const [username, setusername] = useState();
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("userName", userName);
+    localStorage.setItem("username", username);
     //sends the username and socket ID to the Node.js server
-    socket.emit("newUser", { userName, socketID: socket.id });
+    socket.emit("newUser", { username, socketID: socket.id });
     navigate("/chat");
   };
 
@@ -24,7 +24,7 @@ const Card = () => {
             type="text"
             placeholder="John"
             onChange={(e) => {
-              setUsername(e.target.value);
+              setusername(e.target.value);
             }}
           />
         </div>

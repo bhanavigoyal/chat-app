@@ -4,7 +4,7 @@ services:
           build: ./chat-Frontend
           container_name: frontend_c
           ports:
-           - '3000:3000'
+           - '5173:5173'
     backend:
           build: ./backend
           container_name: backend_c
